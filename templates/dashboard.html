@@ -575,6 +575,104 @@
         width: 90%;
     }
 
+    /* Mobile 2-Card Grid Layout (Daraz Style) */
+    @media (max-width: 640px) {
+
+        .results-grid,
+        .skeleton-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 0.6rem !important;
+        }
+
+        .featured-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 0.6rem !important;
+        }
+
+        .product-card {
+            min-height: auto !important;
+            border-radius: 1rem !important;
+        }
+
+        .skeleton-card {
+            height: 340px !important;
+            border-radius: 1rem !important;
+        }
+
+        .img-container,
+        .skeleton-img {
+            height: 120px !important;
+            padding: 0.5rem !important;
+            margin: 0.25rem !important;
+        }
+
+        .card-body {
+            padding: 0.6rem !important;
+        }
+
+        .card-title {
+            font-size: 0.78rem !important;
+            height: 2.2rem !important;
+            margin-bottom: 0.3rem !important;
+            line-clamp: 2 !important;
+            -webkit-line-clamp: 2 !important;
+        }
+
+        .card-source {
+            font-size: 0.62rem !important;
+            margin-bottom: 0.2rem !important;
+        }
+
+        .card-price {
+            font-size: 0.9rem !important;
+            margin-bottom: 0.4rem !important;
+            gap: 0.2rem !important;
+            flex-wrap: wrap !important;
+        }
+
+        .deal-badge {
+            top: 0.4rem !important;
+            left: 0.4rem !important;
+            font-size: 0.55rem !important;
+            padding: 0.2rem 0.4rem !important;
+        }
+
+        .trust-badge-direct {
+            top: 0.4rem !important;
+            right: 0.4rem !important;
+        }
+
+        .trust-score-circle {
+            width: 26px !important;
+            height: 26px !important;
+            font-size: 0.6rem !important;
+            border-width: 1.5px !important;
+        }
+
+        .trust-label {
+            font-size: 0.5rem !important;
+            padding: 0.05rem 0.2rem !important;
+        }
+
+        .btn-wishlist {
+            top: 0.4rem !important;
+            right: 2.4rem !important;
+            width: 1.8rem !important;
+            height: 1.8rem !important;
+            font-size: 0.7rem !important;
+        }
+
+        .btn-view-deal {
+            padding: 0.45rem 0.5rem !important;
+            font-size: 0.75rem !important;
+        }
+
+        .btn-outline {
+            padding: 0.35rem 0.4rem !important;
+            font-size: 0.72rem !important;
+        }
+    }
+
     /* Modal Customization */
     .modal {
         display: none;
@@ -1930,6 +2028,15 @@
     }
 
     // --- Price Alert Modal ---
+    function openAlertModalFromBtn(btn) {
+        const name = btn.getAttribute('data-name');
+        const price = btn.getAttribute('data-price');
+        const source = btn.getAttribute('data-source');
+        const url = btn.getAttribute('data-url');
+        const image = btn.getAttribute('data-image');
+        openAlertModal(name, price, source, url, image);
+    }
+
     function openAlertModal(name, price, source, url, image) {
         document.getElementById('alertModal').style.display = 'flex';
         document.getElementById('alertProductName').innerText = name;
@@ -2259,7 +2366,12 @@
                                 Select to Compare
                             </label>
                             ${isLoggedIn ? `
-                            <button onclick="openAlertModal('${product.name.replace(/'/g, '&apos;')}', ${product.price}, '${product.source}', '${(product.url || '').replace(/'/g, '')}', '${(product.image || '').replace(/'/g, '')}')"
+                            <button data-name="${(product.name || '').replace(/"/g, '&quot;')}"
+                                    data-price="${product.price || 0}"
+                                    data-source="${(product.source || '').replace(/"/g, '&quot;')}"
+                                    data-url="${(product.url || '#').replace(/"/g, '&quot;')}"
+                                    data-image="${(product.image || '').replace(/"/g, '&quot;')}"
+                                    onclick="openAlertModalFromBtn(this)"
                                 style="background: rgba(251,191,36,0.1); border: 1px solid #fbbf24; color: #fbbf24; padding: 0.5rem 1rem; border-radius: 0.75rem; font-size: 0.8rem; font-weight: 700; cursor: pointer; width: 100%; transition: all 0.2s ease;" 
                                 onmouseover="this.style.background='rgba(251,191,36,0.2)'" onmouseout="this.style.background='rgba(251,191,36,0.1)'">
                                 🔔 Set Price Alert

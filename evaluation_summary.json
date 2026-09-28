@@ -1,0 +1,91 @@
+{
+    "timestamp": "2026-09-28 22:46:02",
+    "scrapers": {
+        "daraz": {
+            "latency_sec": 10.683,
+            "items_yielded": 15,
+            "relevance_sample_pct": 60.0,
+            "status": "PASS"
+        },
+        "ebay": {
+            "latency_sec": 64.793,
+            "items_yielded": 0,
+            "relevance_sample_pct": 0.0,
+            "status": "WARNNING_EMPTY"
+        },
+        "amazon": {
+            "latency_sec": 2.686,
+            "items_yielded": 2,
+            "relevance_sample_pct": 0.0,
+            "status": "PASS"
+        },
+        "telemart": {
+            "latency_sec": 1.366,
+            "items_yielded": 18,
+            "relevance_sample_pct": 100.0,
+            "status": "PASS"
+        },
+        "surmawala": {
+            "latency_sec": 1.379,
+            "items_yielded": 0,
+            "relevance_sample_pct": 0.0,
+            "status": "WARNNING_EMPTY"
+        },
+        "mega": {
+            "latency_sec": 1.904,
+            "items_yielded": 0,
+            "relevance_sample_pct": 0.0,
+            "status": "WARNNING_EMPTY"
+        },
+        "clicky": {
+            "latency_sec": 4.8,
+            "items_yielded": 0,
+            "relevance_sample_pct": 0.0,
+            "status": "WARNNING_EMPTY"
+        },
+        "ubuy": {
+            "latency_sec": 6.119,
+            "items_yielded": 16,
+            "relevance_sample_pct": 100.0,
+            "status": "PASS"
+        },
+        "shophive": {
+            "latency_sec": 2.251,
+            "items_yielded": 16,
+            "relevance_sample_pct": 100.0,
+            "status": "PASS"
+        },
+        "priceoye": {
+            "latency_sec": 1.928,
+            "items_yielded": 0,
+            "relevance_sample_pct": 0.0,
+            "status": "WARNNING_EMPTY"
+        },
+        "alfatah": {
+            "latency_sec": 1.419,
+            "items_yielded": 8,
+            "relevance_sample_pct": 100.0,
+            "status": "PASS"
+        }
+    },
+    "nlp_trust_engine": {
+        "execution_time_sec": 3.98,
+        "calculated_trust_score": 92,
+        "positive_pct": 68,
+        "neutral_pct": 32,
+        "negative_pct": 0,
+        "status": "PASS"
+    },
+    "database_alerts": {
+        "tables_present": 10,
+        "alert_insert_select_ok": true,
+        "db_latency_sec": 0.044,
+        "status": "PASS"
+    },
+    "overall_summary": {
+        "avg_scraper_latency_sec": 9.03,
+        "total_yielded_products": 75,
+        "nlp_compute_sec": 3.98,
+        "system_health": "EXCELLENT"
+    }
+}
