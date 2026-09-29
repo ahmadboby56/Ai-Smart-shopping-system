@@ -1142,50 +1142,67 @@
         }
 
         .results-grid {
-            grid-template-columns: 1fr !important;
-            gap: 1.25rem;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 0.5rem !important;
         }
 
         .skeleton-grid {
-            grid-template-columns: 1fr !important;
-            gap: 1.25rem;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 0.5rem !important;
+        }
+
+        .featured-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 0.5rem !important;
         }
 
         .product-card {
-            min-height: auto;
-            border-radius: 1rem;
+            min-height: auto !important;
+            border-radius: 0.75rem !important;
         }
 
         .img-container {
-            height: 180px;
-            padding: 1rem;
+            height: 120px !important;
+            padding: 0.4rem !important;
         }
 
         .card-body {
-            padding: 1rem;
+            padding: 0.5rem !important;
         }
 
         .card-title {
-            font-size: 0.95rem;
-            height: 2.6rem;
-            margin-bottom: 0.75rem;
+            font-size: 0.75rem !important;
+            height: 2.2rem !important;
+            margin-bottom: 0.3rem !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 2 !important;
+            -webkit-box-orient: vertical !important;
+            overflow: hidden !important;
+        }
+
+        .card-source {
+            font-size: 0.65rem !important;
+            margin-bottom: 0.2rem !important;
         }
 
         .card-price {
-            font-size: 1.15rem;
-            margin-bottom: 1rem;
+            font-size: 0.9rem !important;
+            margin-bottom: 0.4rem !important;
+            gap: 0.2rem !important;
+            flex-wrap: wrap !important;
         }
 
         .card-actions {
-            grid-template-columns: 1fr;
-            gap: 0.5rem;
+            grid-template-columns: 1fr !important;
+            gap: 0.35rem !important;
         }
 
         .btn-view-deal,
         .btn-outline {
-            padding: 0.65rem;
-            font-size: 0.8rem;
-            width: 100%;
+            padding: 0.4rem 0.3rem !important;
+            font-size: 0.72rem !important;
+            width: 100% !important;
+            border-radius: 0.5rem !important;
         }
 
         .compare-bar {
